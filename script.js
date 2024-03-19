@@ -34,7 +34,8 @@ function generateGrid() {
             container.appendChild(div);
 
             div.addEventListener("mouseover", () => {
-                div.style.backgroundColor = 'black';
+                const randomColor = Math.floor(Math.random()*16777215).toString(16);
+                div.style.backgroundColor = "#" + randomColor;
             })
         }
     }
