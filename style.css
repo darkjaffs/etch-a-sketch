@@ -5,6 +5,7 @@ body {
     padding: 0;
     background-color: burlywood;
     align-items: center;
+    justify-content: space-between;
 }
 
 #container {
@@ -31,4 +32,19 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#inputtxt {
+    border: 0px;
+    margin: 10px;
+    border-radius: 8px;
+    width: 120px;
+    height: 32px;
+}
+
+#btncontainer {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 5px;
 }
