@@ -16,6 +16,7 @@ body {
     height: 500px;
     align-content: flex-start;
     justify-content: center;
+    border: #F9FAF6 2px solid;
 }
 
 button {
