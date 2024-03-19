@@ -1,12 +1,22 @@
 
 const container = document.getElementById('container');
 const resetbtn = document.getElementById('reset');
+const inputSize = document.getElementById('inputtxt');
 
 initializeGrid();
 
+function gridLength() {
+    if (inputSize.value > 100)
+    {
+        alert("Please enter a value below 100! Defaulting to 16");
+        inputSize.value = 16;
+    }
+    return inputSize.value;
+}
+
 function generateGrid() {
 
-    let gridElement = 16;
+    let gridElement = gridLength();
     let gridSize = 500 / gridElement;
 
     for (let i = 0; i < gridElement; i++) {
@@ -26,19 +36,6 @@ function generateGrid() {
             div.addEventListener("mouseover", () => {
                 div.style.backgroundColor = 'black';
             })
-
-            resetbtn.addEventListener('click', function () {
-
-                const gridItems = document.querySelectorAll('.grid-item');
-                let gridArray = Array.from(gridItems);
-
-                gridItems.forEach(item => {
-                    item.style.backgroundColor = '';
-                })
-
-                
-            });
-
         }
     }
 };
@@ -46,6 +43,17 @@ function generateGrid() {
 function initializeGrid() {
     document.addEventListener('DOMContentLoaded', generateGrid());
 }
+
+resetbtn.addEventListener('click', function () {
+                
+    const gridItems = document.querySelectorAll('.grid-item');
+
+    gridItems.forEach(item => {
+        container.removeChild(item);
+    })
+    
+    generateGrid();
+});
 
 
 
